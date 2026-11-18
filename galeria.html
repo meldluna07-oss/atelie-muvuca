@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galeria do Acervo Têxtil e Espaço Físico do Ateliê Muvuca da UTFPR">
+  <title>Ateliê Muvuca - Galeria do Acervo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/provador.js" defer></script>
+</head>
+<body>
+
+  <header class="area-cabecalho">
+    <div class="logo-container">
+      <h1>Ateliê Muvuca</h1>
+      <p>Galeria do Acervo &amp; Espaço Físico — UTFPR</p>
+    </div>
+  </header>
+
+  <nav class="area-navegacao" aria-label="Navegação Principal">
+    <ul class="menu-atalhos">
+      <li><a href="index.html" class="btn-atalho">Início</a></li>
+      <li><a href="provador.html" class="btn-atalho">Provador Virtual</a></li>
+      <li><a href="galeria.html" class="btn-atalho ativo">Galeria do Acervo</a></li>
+    </ul>
+  </nav>
+
+  <main class="area-principal">
+    
+    <section class="secao-cabecalho-galeria">
+      <h2>Acervo Cultural &amp; Espaço Muvuca</h2>
+      <p>Deslize para o lado para navegar pelas peças desfiladas e o espaço do ateliê!</p>
+    </section>
+
+    <!-- CONTAINER DO CARROSSEL HORIZONTAL ESTILO NETFLIX -->
+    <section class="container-carrossel-netflix" aria-label="Carrossel de Fotos do Acervo">
+      
+      <!-- Botão Seta Esquerda -->
+      <button type="button" class="seta-carrossel seta-esquerda" id="btnSetaEsq" aria-label="Rolar para esquerda">&lsaquo;</button>
+      
+      <!-- Feed de Fotos Rolável na Horizontal -->
+      <div class="feed-horizontal" id="feedGaleria">
+        
+        <figure class="card-polaroid-item">
+          <div class="fitinha-adesiva"></div>
+          <img src="assets/img/galeria-peca1.jpg" alt="Jaqueta jeans customizada com retalhos de tecido colorido e bordados artesanais">
+          <figcaption>Jaqueta Upcycling Muvuca</figcaption>
+        </figure>
+
+        <figure class="card-polaroid-item rotacao-inversa">
+          <div class="fitinha-adesiva"></div>
+          <img src="assets/img/galeria-peca2.jpg" alt="Corset confeccionado a partir de reaproveitamento de tecidos e amarrações">
+          <figcaption>Corset Reaproveitado</figcaption>
+        </figure>
+
+        <figure class="card-polaroid-item">
+          <div class="fitinha-adesiva"></div>
+          <img src="assets/img/galeria-espaco1.jpg" alt="Mesa de corte e modelagem com réguas de madeira e moldes de costura na Sala CB-006">
+          <figcaption>Bancada de Modelagem (CB-006)</figcaption>
+        </figure>
+
+        <figure class="card-polaroid-item rotacao-inversa">
+          <div class="fitinha-adesiva"></div>
+          <img src="assets/img/galeria-espaco2.jpg" alt="Arara com peças de roupas produzidas no ateliê penduradas em cabides">
+          <figcaption>Arara de Peças Desfiladas</figcaption>
+        </figure>
+
+        <figure class="card-polaroid-item">
+          <div class="fitinha-adesiva"></div>
+          <img src="assets/img/espaco-atelie.jpg" alt="Visão geral do espaço físico do ateliê Muvuca na UTFPR">
+          <figcaption>Espaço Físico Muvuca</figcaption>
+        </figure>
+
+      </div>
+
+      <!-- Botão Seta Direita -->
+      <button type="button" class="seta-carrossel seta-direita" id="btnSetaDir" aria-label="Rolar para direita">&rsaquo;</button>
+
+    </section>
+
+  </main>
+
+  <footer class="area-rodape">
+    <p>&copy; 2026 Ateliê Muvuca — UTFPR Campus Curitiba. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,463 @@
+/* ==========================================================================
+   ESTILO ATELIÊ MUVUCA - COLAGEM Y2K & ENCAIXE NO CORPO
+   ========================================================================== */
+:root {
+  --cor-primaria: #8e44ad;
+  --cor-rosa-y2k: #ff6b8b;
+  --cor-papel-kraft: #f4ecd8;
+  --cor-amarelo-adesivo: #f7f06d;
+  --cor-fundo: #fafafa;
+  --cor-texto: #2c3e50;
+  --cor-borda: #2c3e50;
+  --sombra-colagem: 4px 4px 0px var(--cor-borda);
+  --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+/* HEADER E NAV */
+.area-cabecalho {
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 3px solid var(--cor-borda);
+}
+
+.menu-atalhos {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background-color: var(--cor-amarelo-adesivo);
+  border-bottom: 3px solid var(--cor-borda);
+}
+
+.btn-atalho {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  color: var(--cor-texto);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-atalho.ativo {
+  background-color: var(--cor-rosa-y2k);
+  color: #ffffff;
+}
+
+/* LAYOUT PRINCIPAL DO WIREFRAME */
+.area-principal {
+  max-width: 480px;
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* STAGE DO MANEQUIM (COLAGEM 2000) */
+.secao-provador {
+  text-align: center;
+}
+
+.stage-manequim {
+  position: relative;
+  width: 240px;
+  height: 380px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 3px dashed var(--cor-primaria);
+  box-shadow: var(--sombra-colagem);
+  overflow: hidden;
+}
+
+.avatar-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* CAMADAS SOBREPOSTAS DIRETO NO CORPO */
+.camada-sobreposta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.camada-sobreposta svg {
+  width: 100%;
+  height: 100%;
+}
+
+.z-corpo     { z-index: 1; }
+.z-bottom    { z-index: 2; }
+.z-top       { z-index: 3; }
+.z-acessorio { z-index: 4; }
+
+.status-look {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: var(--cor-primaria);
+}
+
+/* CARACTERÍSTICAS DO AVATAR */
+.secao-caracteristicas {
+  background-color: var(--cor-papel-kraft);
+  padding: 1rem;
+  border: 3px solid var(--cor-borda);
+  box-shadow: var(--sombra-colagem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.grupo-controle-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.input-select {
+  padding: 0.5rem;
+  font-weight: bold;
+  border: 2px solid var(--cor-borda);
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.grupo-controle-pele {
+  text-align: center;
+}
+
+.botoes-pele-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.btn-pele {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid var(--cor-borda);
+  cursor: pointer;
+  box-shadow: 2px 2px 0px #000;
+  transition: transform 0.2s ease;
+}
+
+.btn-pele:hover {
+  transform: scale(1.1);
+}
+
+.pele-clara  { background-color: #f4ecd8; }
+.pele-media  { background-color: #d0a785; }
+.pele-escura { background-color: #7d5236; }
+
+/* GRADE DE CARDS ESTILO ADESIVO */
+.secao-arara {
+  background-color: #ffffff;
+  padding: 1rem;
+  border: 3px solid var(--cor-borda);
+  box-shadow: var(--sombra-colagem);
+  text-align: center;
+}
+
+.grade-pecas-wireframe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.card-item-clique {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: var(--cor-papel-kraft);
+  border: 2px solid var(--cor-borda);
+  box-shadow: 3px 3px 0px #000;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.card-item-clique:hover {
+  background-color: var(--cor-amarelo-adesivo);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px #000;
+}
+
+.card-item-clique.vestido {
+  border-color: var(--cor-rosa-y2k);
+  background-color: #ffe6eb;
+}
+
+.preview-svg {
+  width: 50px;
+  height: 50px;
+}
+
+.card-item-clique span {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+
+.btn-limpar {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--cor-rosa-y2k);
+  color: #ffffff;
+  font-weight: bold;
+  border: 2px solid var(--cor-borda);
+  box-shadow: 2px 2px 0px #000;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   NOVOS ESTILOS: HOME E GALERIA POLAROID (ESTÉTICA COLAGEM Y2K)
+   ========================================================================== */
+
+/* HOME: CARDS E ATALHOS */
+.card-apresentacao {
+  background-color: var(--cor-papel-kraft);
+  padding: 1.25rem;
+  border: 3px solid var(--cor-borda);
+  box-shadow: var(--sombra-colagem);
+  text-align: center;
+}
+
+.subtitulo-atelie {
+  font-weight: bold;
+  color: var(--cor-primaria);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.moldura-foto-destaque {
+  margin: 1rem 0;
+  border: 3px solid var(--cor-borda);
+  background-color: #ffffff;
+  padding: 0.5rem;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.moldura-foto-destaque img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.moldura-foto-destaque figcaption {
+  font-size: 0.85rem;
+  color: #555555;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.texto-manifesto {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.secao-atalhos-home {
+  text-align: center;
+}
+
+.grade-cards-home {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card-home-y2k {
+  background-color: #ffffff;
+  border: 3px solid var(--cor-borda);
+  box-shadow: var(--sombra-colagem);
+  padding: 1.2rem;
+  text-align: left;
+}
+
+.card-home-y2k h4 {
+  color: var(--cor-primaria);
+  margin-bottom: 0.5rem;
+}
+
+.btn-acao-home {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--cor-rosa-y2k);
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid var(--cor-borda);
+  box-shadow: 2px 2px 0px #000;
+  transition: transform 0.15s ease;
+}
+
+.btn-acao-home:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px #000;
+}
+
+/* ==========================================================================
+   GALERIA: CARROSSEL HORIZONTAL ESTILO NETFLIX (CSS SCROLL SNAP)
+   ========================================================================== */
+.secao-cabecalho-galeria {
+  text-align: center;
+  background-color: var(--cor-papel-kraft);
+  padding: 1rem;
+  border: 2px dashed var(--cor-primaria);
+  margin-bottom: 1rem;
+}
+
+.container-carrossel-netflix {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+/* FEED ROLÁVEL NA HORIZONTAL */
+.feed-horizontal {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0.5rem;
+  /* Esconde a barra de rolagem em navegadores modernos */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.feed-horizontal::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* CARDS POLAROID DENTRO DO FEED */
+.card-polaroid-item {
+  flex: 0 0 240px; /* Largura fixa de cada foto no trilho */
+  scroll-snap-align: center;
+  position: relative;
+  background-color: #ffffff;
+  border: 2px solid var(--cor-borda);
+  padding: 0.75rem 0.75rem 1.5rem 0.75rem;
+  box-shadow: var(--sombra-colagem);
+  text-align: center;
+  transform: rotate(1.5deg);
+  transition: transform 0.2s ease;
+}
+
+.card-polaroid-item.rotacao-inversa {
+  transform: rotate(-2deg);
+}
+
+.card-polaroid-item:hover {
+  transform: scale(1.03) rotate(0deg);
+}
+
+.card-polaroid-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.card-polaroid-item figcaption {
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  color: var(--cor-texto);
+}
+
+/* SETAS RETRÔ ESTILO Y2K */
+.seta-carrossel {
+  background-color: var(--cor-rosa-y2k);
+  color: #ffffff;
+  border: 2px solid var(--cor-borda);
+  box-shadow: 2px 2px 0px #000;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 40px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: transform 0.1s ease;
+}
+
+.seta-carrossel:hover {
+  background-color: var(--cor-amarelo-adesivo);
+  color: var(--cor-texto);
+  transform: scale(1.05);
+}
+
+.seta-esquerda {
+  margin-right: -15px;
+}
+
+.seta-direita {
+  margin-left: -15px;
+}
+
+.fitinha-adesiva {
+  position: absolute;
+  top: -10px;
+  left: 35%;
+  width: 60px;
+  height: 20px;
+  background-color: rgba(247, 240, 109, 0.85);
+  border: 1px dashed #b2a926;
+  transform: rotate(-4deg);
+}
+
+/* Atualiza a variável de tom de roxo para ter mais contraste */
+:root {
+  --cor-primaria: #6c3483; /* Roxo ligeiramente mais escuro para contraste alto */
+  --cor-rosa-y2k: #ff6b8b;
+  --cor-papel-kraft: #f4ecd8;
+  --cor-amarelo-adesivo: #f7f06d;
+  --cor-fundo: #fafafa;
+  --cor-texto: #1a252f;    /* Cor de texto mais escura e legível */
+  --cor-borda: #1a252f;
+  --sombra-colagem: 4px 4px 0px var(--cor-borda);
+  --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Altera o alinhamento do texto-manifesto para não justificar (remove o alerta) */
+.texto-manifesto {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left; /* Trocado de justify para left para acessibilidade WCAG */
+}
+
+/* Garante alto contraste no subtítulo */
+.subtitulo-atelie {
+  font-weight: bold;
+  color: #4a235a; /* Tom escuro de roxo com rácio de contraste impecável */
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}

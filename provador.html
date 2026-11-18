@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Provador Virtual Interativo do Ateliê Muvuca - UTFPR">
+  <title>Ateliê Muvuca - Provador Virtual</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/provador.js" defer></script>
+</head>
+<body>
+
+  <header class="area-cabecalho">
+    <div class="logo-container">
+      <h1>Ateliê Muvuca</h1>
+      <p>Provador Virtual Interativo &amp; Colagem Y2K — UTFPR</p>
+    </div>
+  </header>
+
+  <nav class="area-navegacao" aria-label="Navegação Principal">
+    <ul class="menu-atalhos">
+      <li><a href="index.html" class="btn-atalho">Início</a></li>
+      <li><a href="provador.html" class="btn-atalho ativo">Provador Virtual</a></li>
+      <li><a href="galeria.html" class="btn-atalho">Galeria do Acervo</a></li>
+    </ul>
+  </nav>
+
+  <main class="area-principal">
+    
+    <h2>Monte seu Look no Ateliê</h2>
+
+    <!-- PALCO DO MANEQUIM CENTRALIZADO (Div usada para layout sem aviso) -->
+    <div class="secao-provador">
+      <div class="stage-manequim" id="stageManequim">
+        
+        <!-- Camada 1: Silhueta Base do Avatar -->
+        <svg id="svgCorpoAvatar" class="avatar-svg z-corpo" viewBox="0 0 200 380" xmlns="http://www.w3.org/2000/svg">
+          <circle id="peleCabeca" cx="100" cy="50" r="28" fill="#f4ecd8" stroke="#2c3e50" stroke-width="3" />
+          <path id="peleTronco" d="M70 85 L130 85 L120 220 L80 220 Z" fill="#f4ecd8" stroke="#2c3e50" stroke-width="3" />
+          <rect id="pelePernaEsq" x="78" y="220" width="18" height="140" fill="#f4ecd8" stroke="#2c3e50" stroke-width="3" />
+          <rect id="pelePernaDir" x="104" y="220" width="18" height="140" fill="#f4ecd8" stroke="#2c3e50" stroke-width="3" />
+        </svg>
+
+        <!-- Camada 2: Peça Inferior -->
+        <div id="camadaBottom" class="camada-sobreposta z-bottom"></div>
+
+        <!-- Camada 3: Peça Superior -->
+        <div id="camadaTop" class="camada-sobreposta z-top"></div>
+
+        <!-- Camada 4: Acessório -->
+        <div id="camadaAcessorio" class="camada-sobreposta z-acessorio"></div>
+
+      </div>
+      
+      <p id="descricaoLookStatus" class="status-look">Avatar: Corpo Médio | Tom Claro | Clique em uma peça para vestir!</p>
+    </div>
+
+    <!-- SEÇÃO CARACTERÍSTICAS (Com h3 em ordem hierárquica após h2) -->
+    <section class="secao-caracteristicas">
+      <h3>Características do Avatar</h3>
+      
+      <div class="grupo-controle-corpo">
+        <label for="selectTipoCorpo"><strong>Tipo de Corpo:</strong></label>
+        <select id="selectTipoCorpo" class="input-select">
+          <option value="medio">Médio / Neutro</option>
+          <option value="magro">Fino / Magro</option>
+          <option value="curvo">Curvilíneo / Mais Cheio</option>
+        </select>
+      </div>
+
+      <div class="grupo-controle-pele">
+        <p><strong>Tom de Pele:</strong></p>
+        <div class="botoes-pele-grid">
+          <button type="button" class="btn-pele pele-clara" data-cor="#f4ecd8" data-nome="Clara" aria-label="Pele Clara"></button>
+          <button type="button" class="btn-pele pele-media" data-cor="#d0a785" data-nome="Média" aria-label="Pele Média"></button>
+          <button type="button" class="btn-pele pele-escura" data-cor="#7d5236" data-nome="Escura" aria-label="Pele Escura"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO ARARA DE PEÇAS (Cards ajustados para div com classe para o CSS) -->
+    <section class="secao-arara">
+      <h3>Acervo de Peças (Clique para Colocar no Corpo)</h3>
+      
+      <div class="grade-pecas-wireframe" id="gridArara">
+        
+        <!-- Card 1: Blusa -->
+        <div class="card-item-clique" data-nome="Blusa Cropped" data-tipo="top" data-id="blusa">
+          <svg class="preview-svg" viewBox="0 0 100 100">
+            <path d="M20 20 L80 20 L72 75 L28 75 Z" fill="#ff6b8b" stroke="#000" stroke-width="2" />
+          </svg>
+          <span>Blusa</span>
+        </div>
+
+        <!-- Card 2: Saia -->
+        <div class="card-item-clique" data-nome="Saia Plissada" data-tipo="bottom" data-id="saia">
+          <svg class="preview-svg" viewBox="0 0 100 100">
+            <path d="M25 15 L75 15 L90 85 L10 85 Z" fill="#c782e8" stroke="#000" stroke-width="2" />
+          </svg>
+          <span>Saia</span>
+        </div>
+
+        <!-- Card 3: Calça -->
+        <div class="card-item-clique" data-nome="Calça Jeans" data-tipo="bottom" data-id="calca">
+          <svg class="preview-svg" viewBox="0 0 100 100">
+            <path d="M25 10 L75 10 L70 90 L53 90 L50 40 L47 40 L30 90 L25 90 Z" fill="#4cd137" stroke="#000" stroke-width="2" />
+          </svg>
+          <span>Calça</span>
+        </div>
+
+        <!-- Card 4: Chapéu -->
+        <div class="card-item-clique" data-nome="Chapéu Bucket" data-tipo="acessorio" data-id="chapeu">
+          <svg class="preview-svg" viewBox="0 0 100 100">
+            <path d="M15 60 Q50 45 85 60 Q50 75 15 60 Z" fill="#f7f06d" stroke="#000" stroke-width="2" />
+            <path d="M32 53 C32 25 68 25 68 53 Z" fill="#f7f06d" stroke="#000" stroke-width="2" />
+          </svg>
+          <span>Chapéu</span>
+        </div>
+
+        <!-- Card 5: Vestido -->
+        <div class="card-item-clique" data-nome="Vestido Y2K" data-tipo="top" data-id="vestido">
+          <svg class="preview-svg" viewBox="0 0 100 100">
+            <path d="M30 10 L70 10 L65 40 L85 90 L15 90 L35 40 Z" fill="#00a8ff" stroke="#000" stroke-width="2" />
+          </svg>
+          <span>Vestido</span>
+        </div>
+
+      </div>
+
+      <button type="button" id="btnLimparStage" class="btn-limpar">Remover Todas as Peças</button>
+    </section>
+
+  </main>
+
+  <footer class="area-rodape">
+    <p>&copy; 2026 Ateliê Muvuca — UTFPR Campus Curitiba. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
